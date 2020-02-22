@@ -5,6 +5,7 @@ import random
 import os
 from dotenv import load_dotenv
 from Embedding import embedding
+from google import get_random_img
 
 # Attributes
 russian_players = {}
@@ -99,18 +100,7 @@ async def reddit(message):
 
 async def search_google(message):
     channel = message.channel
-    try:
-        _, *search_item = message.content.split(" ")
-        search_item = " ".join(search_item)
-        res = search("nudes " + search_item)
-        print(res)
-        await channel.send(res)
-    except IndexError as e:
-        print(e)
-        await channel.send("Incorrect Syntax, try: -nudes [search]")
-    except Exception as e:
-        print(e)
-        await channel.send("Can only request one at a time")
+    await channel.send(search_google('nudes' + message))
 
 
 async def russian_setup(msg):

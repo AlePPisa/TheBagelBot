@@ -1,4 +1,4 @@
-selenium
-discord.py
-bs4
-python-dotenv
+discord.py==1.3.1
+python-dotenv==0.11.0
+requests==2.23.0
+google-api-python-client==1.7.11
